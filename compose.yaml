@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  ethdam:
+    image: ethdam
+    container_name: ethdam
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    # Eğer uygulaman bir port dinliyorsa buraya ekle, örneğin:
+    # ports:
+    #   - "8080:8080"
+    # Eğer env değişkeni gerekiyorsa:
+    # environment:
+    #   - RUST_LOG=info
+    # Eğer volume gerekiyorsa:
+    # volumes:
+    #   - ./data:/app/data
+
